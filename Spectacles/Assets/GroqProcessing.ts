@@ -1,4 +1,4 @@
-const GROQ_API_KEY = "api key here";
+const GROQ_API_KEY = "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";
 
 const remoteServiceModule = require("LensStudio:RemoteServiceModule");
 
@@ -8,6 +8,7 @@ export class GroqProcessing extends BaseScriptComponent {
     private transcriptionTextComponent: Text;
 
     private prevText = "";
+    private hasDone = false;
 
     onAwake() {
         this.createEvent("UpdateEvent").bind(this.update.bind(this));
@@ -21,7 +22,7 @@ export class GroqProcessing extends BaseScriptComponent {
                 "model": "llama-3.1-8b-instant",
                 "messages": [{
                     "role": "user",
-                    "content": `Does this dialogue signal potential danger? Answer only "yes" or "no", with no other output.\n\n${curText}`
+                    "content": `This is some dialogue about a company. Reply with some useful information about this company.\n\n${curText}`
                 }]
             };
 
@@ -30,13 +31,14 @@ export class GroqProcessing extends BaseScriptComponent {
                 Authorization: `Bearer ${GROQ_API_KEY}`
             };
 
-            // const request = new Request("https://api.openai.com/v1/chat/completions", {
+            // const request = new Request("https://api.groq.com/openai/v1/chat/completions", {
             //     method: "POST",
             //     headers,
             //     body: JSON.stringify(body),
             // });
 
             // const response = await remoteServiceModule.fetch(request);
+                
             // const responseText = response.choices[0].message.content;
             // if (responseText.toLowerCase() === "yes") {
             //     // something here
@@ -44,7 +46,7 @@ export class GroqProcessing extends BaseScriptComponent {
             //     // something else here
             // }
 
-            print("text changed!");
+            print("text changed! ");
         }
 
         this.prevText = curText;
