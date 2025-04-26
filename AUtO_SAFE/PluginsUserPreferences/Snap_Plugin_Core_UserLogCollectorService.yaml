@@ -1,4 +1,0 @@
-clearOnReset:
-  type: bool
-  value: false
-  options: 4
