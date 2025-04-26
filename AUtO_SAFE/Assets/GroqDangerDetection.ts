@@ -16,5 +16,7 @@ export class NewScript extends BaseScriptComponent {
             // TODO: replace with actual Groq request
             print("text changed!");
         }
+
+        this.prevText = curText;
     }
 }
