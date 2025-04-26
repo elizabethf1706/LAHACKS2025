@@ -26,14 +26,17 @@
   CurrentVisibility: Editable
   MaxVisibility: Editable
   ScriptInputsHidden:
+    outputTextComponent: false
     transcriptionTextComponent: false
   ScriptTypesHidden:
     {}
   DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
   DefaultScriptInputs:
     - transcriptionTextComponent: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      outputTextComponent: !<reference.Text> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
     - // @input Component.Text transcriptionTextComponent
+    - // @input Component.Text outputTextComponent

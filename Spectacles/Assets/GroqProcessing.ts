@@ -1,4 +1,4 @@
-const GROQ_API_KEY = "";
+const GROQ_API_KEY = "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";
 
 const remoteServiceModule = require("LensStudio:RemoteServiceModule");
 
@@ -6,6 +6,9 @@ const remoteServiceModule = require("LensStudio:RemoteServiceModule");
 export class GroqProcessing extends BaseScriptComponent {
     @input
     private transcriptionTextComponent: Text;
+
+    @input
+    private outputTextComponent: Text;
 
     private prevText = "";
     private hasDone = false;
@@ -30,11 +33,17 @@ export class GroqProcessing extends BaseScriptComponent {
 
     private async getInfo(text: string) {
         const body = {
-            "model": "llama-3.1-8b-instant",
-            "messages": [{
-                "role": "user",
-                "content": `This is some dialogue about a company. Reply with some useful information about this company.\n\n${text}`
-            }]
+            "model": "llama-3.3-70b-versatile",
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "You are a personal assistant helping a user at a career fair. You are given some dialogue from the user and the person they're speaking to; the user messages are *not* talking to you, they're transcripts of the user's conversation with someone else. Reply with information that may help the user in this conversation. If you cannot provide direct help, don't say anything."
+                },
+                {
+                    "role": "user",
+                    "content": text
+                }
+            ]
         };
 
         const headers = {
@@ -53,6 +62,7 @@ export class GroqProcessing extends BaseScriptComponent {
             
         const responseText = responseJson.choices[0].message.content;
 
-        print(responseText);
+        this.outputTextComponent.text = responseText;
+        print("hey");
     }
 }
