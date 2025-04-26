@@ -1,5 +1,3 @@
-const GROQ_API_KEY = "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";
-
 const remoteServiceModule = require("LensStudio:RemoteServiceModule");
 
 @component
@@ -18,51 +16,50 @@ export class GroqProcessing extends BaseScriptComponent {
     }
 
     private update() {
-        const curText = this.transcriptionTextComponent.text;
+        // const curText = this.transcriptionTextComponent.text;
 
-        if (this.prevText !== curText) {
-            this.getInfo(curText);
+        // if (this.prevText !== curText) {
+        //     this.getInfo(curText);
 
-            print("text changed! " + this.prevText + " | " + curText);
+        //     print("text changed! " + this.prevText + " | " + curText);
 
-            this.prevText = curText;
-        }
+        //     this.prevText = curText;
+        // }
 
         
     }
 
     private async getInfo(text: string) {
-        const body = {
-            "model": "llama-3.3-70b-versatile",
-            "messages": [
-                {
-                    "role": "system",
-                    "content": "You are a personal assistant helping a user at a career fair. You are given some dialogue from the user and the person they're speaking to; the user messages are *not* talking to you, they're transcripts of the user's conversation with someone else. Reply with information that may help the user in this conversation. If you cannot provide direct help, don't say anything."
-                },
-                {
-                    "role": "user",
-                    "content": text
-                }
-            ]
-        };
+    //     const body = {
+    //         "model": "llama-3.3-70b-versatile",
+    //         "messages": [
+    //             {
+    //                 "role": "system",
+    //                 "content": "You are a personal assistant helping a user at a career fair. You are given some dialogue from the user and the person they're speaking to; the user messages are *not* talking to you, they're transcripts of the user's conversation with someone else. Reply with information that may help the user in this conversation. If you cannot provide direct help, don't say anything."
+    //             },
+    //             {
+    //                 "role": "user",
+    //                 "content": text
+    //             }
+    //         ]
+    //     };
 
-        const headers = {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${GROQ_API_KEY}`
-        };
+    //     const headers = {
+    //         "Content-Type": "application/json",
+    //     };
 
-        const request = new Request("https://api.groq.com/openai/v1/chat/completions", {
-            method: "POST",
-            headers,
-            body: JSON.stringify(body),
-        });
+    //     const request = new Request("https://api.groq.com/openai/v1/chat/completions", {
+    //         method: "POST",
+    //         headers,
+    //         body: JSON.stringify(body),
+    //     });
 
-        const response = await remoteServiceModule.fetch(request);
-        const responseJson = await response.json();
+    //     const response = await remoteServiceModule.fetch(request);
+    //     const responseJson = await response.json();
             
-        const responseText = responseJson.choices[0].message.content;
+    //     const responseText = responseJson.choices[0].message.content;
 
-        this.outputTextComponent.text = responseText;
-        print("hey");
+    //     this.outputTextComponent.text = responseText;
+    //     print("hey");
     }
 }

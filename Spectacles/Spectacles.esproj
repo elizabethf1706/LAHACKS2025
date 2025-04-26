@@ -24,9 +24,9 @@ metaInfo:
     []
   tags:
     []
-  lensName: Specs Starter
+  lensName: Career Fair
   lensDescriptors:
-    []
+    - EXPERIMENTAL_API
   lensApplicability:
     - Front
     - Back
