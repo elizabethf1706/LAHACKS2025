@@ -40,4 +40,3 @@
     - '// @input int logLevelFilter = 8 {"widget":"combobox", "values":[{"label":"Error", "value":3}, {"label":"Warning", "value":4}, {"label":"Info", "value":6}, {"label":"Debug", "value":7}, {"label":"Verbose", "value":8}]}'
     - // @input bool _debugModeEnabled
   DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
-  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000

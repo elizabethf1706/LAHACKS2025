@@ -51,4 +51,3 @@
     - '// @input Component.RenderMeshVisual[] meshVisuals = {} {"hint":"The meshes which will have their baseColor changed on pinch/hover events"}'
   SvgIcon: ""
   DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
-  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000

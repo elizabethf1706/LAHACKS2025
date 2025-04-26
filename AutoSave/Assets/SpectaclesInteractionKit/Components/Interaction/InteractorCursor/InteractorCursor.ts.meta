@@ -44,4 +44,3 @@
     - // @input Component.ScriptComponent _interactor
   SvgIcon: ""
   DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
-  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000

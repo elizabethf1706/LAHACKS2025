@@ -2,9 +2,9 @@
   PackagePath: ""
   StudioVersion:
     major: 5
-    minor: 8
+    minor: 7
     patch: 0
-    build: 25030621
+    build: 25021204
     type: Unset
   Description: |-
     Release
@@ -23,12 +23,11 @@
   VersionMajor: 0
   VersionMinor: 11
   VersionPatch: 0
-  UpdateCheckpoint: 56
+  UpdateCheckpoint: 55
   ExportUid: 2103d25e-7c18-4e97-b47c-4020ab1bcf42
   ComponentUid: 0f7a0bbe-777c-41a5-b979-0b0430f25836
   CurrentVisibility: Editable
   MaxVisibility: Editable
-  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
   Instantiable: !<reference> 00000000-0000-0000-0000-000000000000
   AssetLibraryDependencyStructure: !<AssetLibraryDependencyStructure>
     Name: SpectaclesInteractionKit
@@ -39,5 +38,5 @@
       minor: 11
       patch: 0
       build: 0
-  coreVersion: 304
-  clientVersion: 13.330000
+  coreVersion: 300
+  clientVersion: 13.290000

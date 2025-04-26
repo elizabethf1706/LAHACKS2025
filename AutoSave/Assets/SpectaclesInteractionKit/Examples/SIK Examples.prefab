@@ -4692,7 +4692,6 @@
     LineSpacing: 1.000000
     CapitalizationOverride: None
     CapitilizationOverride: None
-  EnableBatching: false
   ShadowMode: None
 - !<RenderMeshVisual/6a83cf13-2787-4e68-846d-1f0ae9c05c0d>
   PrefabRemaps:
@@ -5674,7 +5673,7 @@
   BlendShapesEnabled: true
   BlendNormals: false
   BlendShapes:
-    Size: 0.000000
+    Size: 0.660000
 - !<ScreenTransform/7d8c25f4-878f-4092-a22a-7e6bdaa001f6>
   PrefabRemaps:
     []
