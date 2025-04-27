@@ -23,34 +23,37 @@ export class ButtonHandler extends BaseScriptComponent {
     }
 
     onButtonPressed() {
-        // debug-print so we know it fired
-        // print("🔥 onButtonPressed() fired!");
+        // // debug-print so we know it fired
+        // // print("🔥 onButtonPressed() fired!");
 
-        // hide all three buttons
+        // // hide all three buttons
         this.pfp1.enabled = false;
         this.pfp2.enabled = false;
         this.pfp3.enabled = false;
 
-        // update the LinkD Info text
-        this.linkInfoTextObj.enabled = false;
+        // // update the LinkD Info text
+        // this.linkInfoTextObj.enabled = false;
 
-        // wait to find loading
+        // // wait to find loading
         this.loading.enabled = true;
-        // getDataFromOtherSource();
+        // // getDataFromOtherSource();
 
-        //this.loading.enabled = false;
+        // //this.loading.enabled = false;
+        
 
 
+        // // Reveal text
+        // this.linkInfoTextObj.enabled = true;
 
-        // Reveal text
-        this.linkInfoTextObj.enabled = true;
+        // // hard code because of issues with linkd api
+        // this.linkInfoTextObj.text = "";
 
-        // Update text
-        const txtA = this.linkInfoTextObj;
-        if (txtA) {
-            txtA.text = "PFP1 was pressed";
-          return;
-        }
+        // // Update text
+        // // const txtA = this.linkInfoTextObj;
+        // // if (txtA) {
+        // //     txtA.text = "PFP1 was pressed";
+        // //   return;
+        // // }
     }
 } 
 
