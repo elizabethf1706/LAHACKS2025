@@ -7857,6 +7857,9 @@
       audioOutput: !<reference.AudioTrackAsset> 358f5dd6-a3a3-44cc-80b3-776d7616cd6b
       outputTextComponent: !<reference.Text> c1a30024-77bc-4e61-971c-e900d3d7a375
       debugText: !<reference.Text> 2ec3b31f-3e77-4aee-9fd9-46cd02f60ed9
+      name1: !<reference.Text> 5e6248d3-92cc-4f42-b1f2-72be179cac85
+      name2: !<reference.Text> 55b8f9a8-db02-4c00-8c46-5d705cd15522
+      name3: !<reference.Text> 9ad726be-a107-40e4-9bb0-0f5272a04775
   ScriptTypes:
     "":
       {}

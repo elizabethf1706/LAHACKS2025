@@ -45,6 +45,15 @@ export class MicrophoneRecorder extends BaseScriptComponent {
 
   private fullText: string = "";
 
+  @input
+  name1: Text;
+
+  @input
+  name2: Text;
+
+  @input
+  name3: Text;
+
   onAwake() {
     // Initialize microphone control and set sample rate
     this.microphoneControl = this.microphoneAsset
@@ -339,6 +348,34 @@ export class MicrophoneRecorder extends BaseScriptComponent {
     await remoteServiceModule.fetch(request);
   }
 
+  private async retrieveLinkd() {
+    const headers = {
+      "Content-Type": "application/json"
+    };
+    
+    const request = new Request("https://la-hacks-2025-backend.onrender.com/api/get-profiles", {
+      method: "GET",
+      headers,
+      body: JSON.stringify({
+        transcription: this.fullText
+      }),
+    });
+
+    const response = await remoteServiceModule.fetch(request);
+
+    const profiles = await response.json().profiles;
+
+    if (profiles.length >= 1) {
+      this.name1.text = profiles[0].name;
+    }
+    if (profiles.length >= 2) {
+      this.name2.text = profiles[1].name;
+    }
+    if (profiles.length >= 3) {
+      this.name3.text = profiles[2].name;
+    }
+  }
+
   private onToggle() {
     if (this.isOn) {
       this.recordMicrophoneAudio(false);
@@ -347,6 +384,7 @@ export class MicrophoneRecorder extends BaseScriptComponent {
       this.isOn = false;
     } else {
       this.recordMicrophoneAudio(true);
+      this.retrieveLinkd();
       this.isOn = true;
     }
   }

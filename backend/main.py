@@ -280,7 +280,7 @@ def upload_profiles():
         "success": True
     })
 
-@app.post("/api/get-profiles")
+@app.get("/api/get-profiles")
 def get_profiles():
     return jsonify({
         "success": True,
