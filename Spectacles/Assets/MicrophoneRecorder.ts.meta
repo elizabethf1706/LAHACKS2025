@@ -29,6 +29,9 @@
     audioOutput: false
     debugText: false
     microphoneAsset: false
+    name1: false
+    name2: false
+    name3: false
     outputTextComponent: false
   ScriptTypesHidden:
     {}
@@ -38,6 +41,9 @@
       audioOutput: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
       outputTextComponent: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      name1: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      name2: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      name3: !<reference.Text> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
@@ -46,3 +52,6 @@
     - // @input Asset.AudioTrackAsset audioOutput
     - // @input Component.Text outputTextComponent
     - // @input Component.Text debugText
+    - // @input Component.Text name1
+    - // @input Component.Text name2
+    - // @input Component.Text name3
