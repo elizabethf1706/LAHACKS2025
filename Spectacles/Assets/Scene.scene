@@ -14040,7 +14040,7 @@
     - f5f1c67b-048b-4585-a97d-ecaaf7ec954b: 0980236c-e7b4-4ecf-a638-971eae5e11b3
     - fa3b6310-9e36-43a7-a8a3-3ce064ebc32c: 05400af6-09c1-4836-bded-dc3c5beae11b
   Name: AudioClassification__PUT_IN_ORTHO_CAM
-  Enabled: true
+  Enabled: false
   Layers: 1048576
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: -1.000000}
