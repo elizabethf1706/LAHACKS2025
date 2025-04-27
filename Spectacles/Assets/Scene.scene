@@ -4527,9 +4527,6 @@
   ScriptAsset: !<reference> 43a76931-9bde-4e06-95b3-e9128537f344
   ScriptInputsDefault:
     _isToggledOn: true
-    editEventCallbacks: true
-    customFunctionForOnStateChanged: true
-    onStateChangedFunctionNames: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -4537,10 +4534,10 @@
       _onIcon: !<reference.SceneObject> 956f4557-cd86-460a-a362-0f509e7c1a61
       _offIcon: !<reference.SceneObject> 04296362-b1e9-4286-b7e9-d62d26e194ea
       _isToggledOn: false
-      editEventCallbacks: false
-      customFunctionForOnStateChanged: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      editEventCallbacks: true
+      customFunctionForOnStateChanged: !<reference.ScriptComponent> 5f13d122-64f8-4e4e-ba46-6d22db37887e
       onStateChangedFunctionNames: !<string[]>
-        []
+        - onToggle
   ScriptTypes:
     "":
       {}
@@ -11511,7 +11508,7 @@
     []
   Name: Screen Transform
   Enabled: true
-  IsAdvanced: false
+  IsAdvanced: true
   Constraints:
     pinToLeft: false
     pinToTop: false
@@ -11528,7 +11525,7 @@
     scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     hasSegmentScaleCompensation: false
   RawMode: true
-  ForceBasic: true
+  ForceBasic: false
   Anchor:
     left: -0.500000
     bottom: -0.500000

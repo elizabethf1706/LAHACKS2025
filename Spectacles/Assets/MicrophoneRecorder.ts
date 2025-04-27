@@ -41,6 +41,9 @@ export class MicrophoneRecorder extends BaseScriptComponent {
   private readonly MAX_SILENCE_DURATION = 0.5; // seconds
 
   private justStarted: boolean = true;
+  private isOn: boolean = true;
+
+  private fullText: string = "";
 
   onAwake() {
     // Initialize microphone control and set sample rate
@@ -287,6 +290,7 @@ export class MicrophoneRecorder extends BaseScriptComponent {
     const responseJson = await response.json();
 
     // todo: maybe some error handling here
+    this.fullText += responseJson.response;
     this.outputTextComponent.text = responseJson.response;
   }
   
@@ -295,5 +299,25 @@ export class MicrophoneRecorder extends BaseScriptComponent {
     this.recordMicrophoneAudio(false);
     this.sendData();
     this.recordMicrophoneAudio(true);
+  }
+
+  private sendSummary() {
+    if (!this.fullText) {
+      return;
+    }
+    
+    print("(todo: send summary with this.fullText)");
+  }
+
+  private onToggle() {
+    if (this.isOn) {
+      this.recordMicrophoneAudio(false);
+      this.sendSummary();
+      this.fullText = "";
+      this.isOn = false;
+    } else {
+      this.recordMicrophoneAudio(true);
+      this.isOn = true;
+    }
   }
 }
