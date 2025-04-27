@@ -218,30 +218,73 @@ export class MicrophoneRecorder extends BaseScriptComponent {
     return Math.sqrt(sumSquares / frame.length);
   }
 
-  private async sendData() {
-    const data = this.recordedAudioFrames.map((prev) => Array.from(prev.audioFrame)).reduce((a, b) => a.concat(b), []);
+  private arrayBufferToBase64(buffer: any): string {
+    const bytes = new Uint8Array(buffer);
+    let binary = '';
+    const chunk = 1024;
+    
+    // Process in chunks to avoid call stack issues with large arrays
+    for (let i = 0; i < bytes.length; i += chunk) {
+      const slice = bytes.slice(i, Math.min(i + chunk, bytes.length));
+      const chars = Array.from(slice).map(b => String.fromCharCode(b));
+      binary += chars.join('');
+    }
+    
+    // Manually implement base64 encoding
+    const base64Chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+    let result = '';
+    let i = 0;
+    
+    while (i < binary.length) {
+      const a = binary.charCodeAt(i++) & 0xff;
+      const b = i < binary.length ? binary.charCodeAt(i++) & 0xff : 0;
+      const c = i < binary.length ? binary.charCodeAt(i++) & 0xff : 0;
+      
+      const triplet = (a << 16) | (b << 8) | c;
+      
+      result += base64Chars[(triplet >> 18) & 0x3F];
+      result += base64Chars[(triplet >> 12) & 0x3F];
+      result += i > binary.length + 1 ? '=' : base64Chars[(triplet >> 6) & 0x3F];
+      result += i > binary.length ? '=' : base64Chars[triplet & 0x3F];
+    }
+    
+    return result;
+  }
 
+  private async sendData() {
+    const data = Float32Array.from(this.recordedAudioFrames.map((prev) => Array.from(prev.audioFrame)).reduce((a, b) => a.concat(b), []));
+
+    // print(data)
+    // print(data);
     const headers = {
-      "Content-Type": "application/json",
+      "Content-Type": "text/plain; charset=utf-8",
     };
 
-    print("preparing req")
+    print("preparing req");
+
+    const base64 = this.arrayBufferToBase64(data.buffer);
+
+    // for (let i = 0; i < (uint8Array.length % 4); i++) {
+    //   binaryString += "\0"
+    // }
+
+    // print(base64);
+
+    // const blob = new Blob([data.buffer]);
 
     const request = new Request("https://la-hacks-2025-backend.onrender.com/api/audio-response", {
         method: "POST",
         headers,
-        body: JSON.stringify(data),
+        body: base64,
     });
 
-    print("sending req")
+    print("sending req");
 
     const response = await remoteServiceModule.fetch(request);
 
     print("sent req ");
 
     const responseJson = await response.json();
-
-    
 
     // todo: maybe some error handling here
     this.outputTextComponent.text = responseJson.response;
