@@ -8,6 +8,7 @@ import os
 import base64
 import requests
 import google.generativeai as genai
+import re
 
 load_dotenv()
 
@@ -272,22 +273,138 @@ def get_conversations():
         "transcriptions": transcriptions
     })
 
-@app.post("/api/upload-profiles")
-def upload_profiles():
-    global stored_profiles
-    profiles = request.json["profiles"]
+# @app.post("/api/upload-profiles")
+# def upload_profiles():
+#     global stored_profiles
+#     profiles = request.json["profiles"]
 
-    stored_profiles = profiles
+#     stored_profiles = profiles
 
-    return jsonify({
-        "success": True
-    })
+#     return jsonify({
+#         "success": True
+#     })
 
-@app.get("/api/get-profiles")
+def parse_input(input_text):
+    query = input_text
+    limit = 1
+    schools = []
+
+    # Extract limit (e.g., "limit 7")
+    limit_match = re.search(r'limit\s+(\d+)', input_text, re.IGNORECASE)
+    if limit_match:
+        limit = int(limit_match.group(1))
+        query = query.replace(limit_match.group(0), '').strip()
+
+    # Extract all "school ..." filters
+    school_matches = re.finditer(r'school\s+([^,]+)', input_text, re.IGNORECASE)
+    for match in school_matches:
+        schools.append(match.group(1).strip())
+        query = query.replace(match.group(0), '').strip()
+
+    # Clean up extra commas and spaces
+    query = re.sub(r',+', ',', query)
+    query = query.strip(", ")
+
+    return query, limit, schools
+
+def build_search_url(query, limit, schools):
+    params = {
+        'query': query,
+        'limit': limit
+    }
+    for school in schools:
+        params.setdefault('school', []).append(school)
+
+    search_params = []
+    for key, value in params.items():
+        if isinstance(value, list):
+            for item in value:
+                search_params.append((key, item))
+        else:
+            search_params.append((key, value))
+
+    return "https://search.linkd.inc/api/search/users", search_params
+
+def fetch_linkedin_profiles(search_url, params):
+    try:
+        res = requests.get(search_url, headers={
+            'Authorization': f'Bearer {os.getenv("LINKD_API_KEY")}',
+            'Content-Type': 'application/json'
+        }, params=params)
+        res.raise_for_status()
+        results = res.json().get('results', [])
+        # profiles = []
+
+        # for r in results:
+        #     p = r.get('profile', {})
+        #     profile = {
+        #         'name': p.get('name'),
+        #         'title': p.get('title'),
+        #         'location': p.get('location'),
+        #         'linkedin_url': p.get('linkedin_url'),
+        #         'company': (r.get('experience', [{}])[0].get('company_name', '') if r.get('experience') else ''),
+        #         'school': (r.get('education', [{}])[0].get('school_name', '') if r.get('education') else '')
+        #     }
+        #     profiles.append(profile)
+
+        # (TODO) hard code because linkd api times out sometimes
+        profiles = [
+            {
+                "name": "John Doe",
+                "title": "",
+                "location": "",
+                "linkedin_url": "",
+                "company": "",
+                "school": ""
+            },
+            {
+                "name": "Ben Lee",
+                "title": "",
+                "location": "",
+                "linkedin_url": "",
+                "company": "",
+                "school": ""
+            },
+            {
+                "name": "Eva Ng",
+                "title": "",
+                "location": "",
+                "linkedin_url": "",
+                "company": "",
+                "school": ""
+            },
+        ]
+
+        return profiles
+
+    except requests.HTTPError as errh:
+        print("HTTP Error:", errh.response.text)
+    except Exception as e:
+        print("Error fetching LinkedIn profiles:", e)
+    return []
+
+
+@app.post("/api/get-profiles")
 def get_profiles():
+    data = request.get_json()
+    if not data or 'input' not in data:
+        return jsonify({'error': 'Missing "input" field in request body'}), 400
+
+    input_text = data['input']
+    print("DEBUG: Combined Input:", input_text)
+
+    # Parse input
+    query, limit, schools = parse_input(input_text)
+    print("DEBUG: Query:", query)
+    print("DEBUG: Limit:", limit)
+    print("DEBUG: Schools:", schools)
+
+    # Fetch LinkedIn profiles
+    search_url, search_params = build_search_url(query, limit, schools)
+    profiles = fetch_linkedin_profiles(search_url, search_params)
+
     return jsonify({
-        "success": True,
-        "profiles": stored_profiles
+        'profiles': profiles
     })
 
 @app.route('/api/set_resume', methods=['POST'])

@@ -354,16 +354,16 @@ export class MicrophoneRecorder extends BaseScriptComponent {
     };
     
     const request = new Request("https://la-hacks-2025-backend.onrender.com/api/get-profiles", {
-      method: "GET",
+      method: "POST",
       headers,
       body: JSON.stringify({
-        transcription: this.fullText
+        input: this.fullText
       }),
     });
 
     const response = await remoteServiceModule.fetch(request);
 
-    const profiles = await response.json().profiles;
+    const profiles = (await response.json()).profiles;
 
     if (profiles.length >= 1) {
       this.name1.text = profiles[0].name;
