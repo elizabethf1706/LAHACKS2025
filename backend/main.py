@@ -27,6 +27,9 @@ headers = {
     "Content-Type": "application/json"
 }
 
+# Add a global variable to store the resume
+global_resume = None
+
 @app.post("/api/transcribe")
 def post_audio_response():
     data = request.data.decode()
@@ -286,3 +289,16 @@ def get_profiles():
         "success": True,
         "profiles": stored_profiles
     })
+
+@app.route('/api/set_resume', methods=['POST'])
+def set_resume():
+    """
+    Endpoint to set the resume text globally.
+    Expects JSON: { "resume": "<resume text>" }
+    """
+    global global_resume
+    resume_text = request.json.get("resume", "").strip()
+    if not resume_text:
+        return jsonify({"error": "No resume text provided"}), 400
+    global_resume = resume_text
+    return jsonify({"message": "Resume updated successfully."}), 200
