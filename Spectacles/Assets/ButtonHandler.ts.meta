@@ -27,6 +27,7 @@
   MaxVisibility: Editable
   ScriptInputsHidden:
     linkInfoTextObj: false
+    loading: false
     pfp1: false
     pfp2: false
     pfp3: false
@@ -38,6 +39,7 @@
       pfp2: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       pfp3: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       linkInfoTextObj: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      loading: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
@@ -45,4 +47,5 @@
     - // @input SceneObject pfp1
     - // @input SceneObject pfp2
     - // @input SceneObject pfp3
+    - // @input SceneObject loading
     - // @input Component.Text linkInfoTextObj

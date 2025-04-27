@@ -12,6 +12,9 @@ export class ButtonHandler extends BaseScriptComponent {
     private pfp3: SceneObject;
 
     @input
+    private loading: SceneObject;
+
+    @input
     private linkInfoTextObj: Text;
 
     onCreate() {
@@ -21,7 +24,7 @@ export class ButtonHandler extends BaseScriptComponent {
 
     onButtonPressed() {
         // debug-print so we know it fired
-        print("🔥 onButtonPressed() fired!");
+        // print("🔥 onButtonPressed() fired!");
 
         // hide all three buttons
         this.pfp1.enabled = false;
@@ -29,10 +32,25 @@ export class ButtonHandler extends BaseScriptComponent {
         this.pfp3.enabled = false;
 
         // update the LinkD Info text
+        this.linkInfoTextObj.enabled = false;
+
+        // wait to find loading
+        this.loading.enabled = true;
+        // getDataFromOtherSource();
+
+        //this.loading.enabled = false;
+
+
+
+        // Reveal text
+        this.linkInfoTextObj.enabled = true;
+
+        // Update text
         const txtA = this.linkInfoTextObj;
         if (txtA) {
-          txtA.text = "PFP1 was pressed";
+            txtA.text = "PFP1 was pressed";
           return;
         }
     }
-}
+} 
+
