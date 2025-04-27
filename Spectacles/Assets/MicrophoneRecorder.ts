@@ -275,7 +275,7 @@ export class MicrophoneRecorder extends BaseScriptComponent {
 
     // const blob = new Blob([data.buffer]);
 
-    const request = new Request("https://la-hacks-2025-backend.onrender.com/api/audio-response", {
+    const request = new Request("https://la-hacks-2025-backend.onrender.com/api/transcribe", {
         method: "POST",
         headers,
         body: base64,
@@ -289,9 +289,27 @@ export class MicrophoneRecorder extends BaseScriptComponent {
 
     const responseJson = await response.json();
 
+    
+
+    const chatHeaders = {
+      "Content-Type": "application/json",
+    };
+
+    const chatRequest = new Request("https://la-hacks-2025-backend.onrender.com/api/chat", {
+      method: "POST",
+      headers: chatHeaders,
+      body: JSON.stringify({
+        message: responseJson.transcription
+      }),
+    });
+
+    const chatResponse = await remoteServiceModule.fetch(chatRequest);
+
+    const chatResponseJson = await chatResponse.json();
+
     // todo: maybe some error handling here
     this.fullText += responseJson.transcription;
-    this.outputTextComponent.text = responseJson.response;
+    this.outputTextComponent.text = JSON.parse(chatResponseJson.assistant).join("\n");
   }
   
   private stopRecordingDueToSilence() {
