@@ -13,6 +13,7 @@
     - !<own> 7cef63e6-81e7-4f1c-b1f6-aaa83aa26b73
     - !<own> 079863ed-1150-47d2-88b1-3ce07041ef38
     - !<own> c2ad45e2-ad44-457a-8501-c748b26ccc42
+    - !<own> 0776b587-d07c-43fc-9712-109a36c62538
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       []
@@ -814,6 +815,21 @@
     - !<own> 72920a42-8906-4309-9ef1-9f0a762b67ac
   Components:
     []
+- !<SceneObject/0776b587-d07c-43fc-9712-109a36c62538>
+  PrefabRemaps:
+    []
+  Name: SendCamera
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> fed92181-5e4b-4044-83bc-86af9c901375
 - !<SceneObject/079863ed-1150-47d2-88b1-3ce07041ef38>
   PrefabRemaps:
     []
@@ -21292,6 +21308,22 @@
     - !<own> 2f0c4aef-e12a-4198-b679-6a8760f24776
   Components:
     []
+- !<ScriptComponent/fed92181-5e4b-4044-83bc-86af9c901375>
+  PrefabRemaps:
+    []
+  Name: SendCamera
+  Enabled: true
+  ScriptAsset: !<reference> 27a6e537-5b06-4ce4-abc6-9c473e7c112e
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      image: !<reference.Image> 71913310-f95c-4b3d-8ce3-d1a49de14691
+  ScriptTypes:
+    "":
+      {}
 - !<BodyComponent/ff050a01-bc1d-403a-9f69-114e72bc8e95>
   PrefabRemaps:
     []

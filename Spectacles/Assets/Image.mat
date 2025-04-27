@@ -4,7 +4,27 @@
     - !<own> d839d299-bfc0-4167-8687-3fa02bb59da1
 - !<PassInfo/d839d299-bfc0-4167-8687-3fa02bb59da1>
   CachedProperties:
-    []
+    - Port_Default_N204:
+        typeIdx: 1
+        value: 0.000000
+    - Port_Default_N369:
+        typeIdx: 5
+        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - PreviewEnabled:
+        typeIdx: 0
+        value: 0
+    - baseColor:
+        typeIdx: 5
+        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - overrideTimeDelta:
+        typeIdx: 1
+        value: 0.000000
+    - overrideTimeElapsed:
+        typeIdx: 1
+        value: 0.000000
+    - overrideTimeEnabled:
+        typeIdx: 0
+        value: 0
   DepthWrite: false
   DepthTest: false
   DepthFunction: LessEqual
@@ -22,25 +42,5 @@
     - NODE_69_DROPLIST_ITEM 0
   BlendMode: PremultipliedAlphaAuto
   Properties:
-    Port_Default_N204:
-      typeIdx: 1
-      value: 0.000000
-    Port_Default_N369:
-      typeIdx: 5
-      value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-    PreviewEnabled:
-      typeIdx: 0
-      value: 0
-    baseColor:
-      typeIdx: 5
-      value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-    overrideTimeDelta:
-      typeIdx: 1
-      value: 0.000000
-    overrideTimeElapsed:
-      typeIdx: 1
-      value: 0.000000
-    overrideTimeEnabled:
-      typeIdx: 0
-      value: 0
+    {}
   Pass: !<reference> 437d0a46-2c11-41fd-8691-5dc46e4225c6
