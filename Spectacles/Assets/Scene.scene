@@ -7,6 +7,9 @@
     - !<own> 2bf3c3a4-1630-4256-9d42-ec25f02fb6eb
     - !<own> 9d737db1-d6e9-43d8-8434-b93d05a3b7f3
     - !<own> 09111734-e4eb-402b-bd3f-b0aa2dc04791
+    - !<own> be400832-17e1-4571-8e72-7e654d145e92
+    - !<own> ca68bf14-9b48-4c19-a094-d25f42f90d78
+    - !<own> 06e8ad88-9618-4a87-8212-38fb09a1315f
     - !<own> 079863ed-1150-47d2-88b1-3ce07041ef38
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
@@ -618,6 +621,21 @@
   ScriptTypes:
     "":
       {}
+- !<SceneObject/06e8ad88-9618-4a87-8212-38fb09a1315f>
+  PrefabRemaps:
+    []
+  Name: Audio Output
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> ca14e130-54e5-48a9-b0ba-02d53957ec4d
 - !<ScriptComponent/06f6f718-90f6-4780-95aa-8a7ba981b8af>
   PrefabRemaps:
     []
@@ -3991,6 +4009,82 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<Text/2ec3b31f-3e77-4aee-9fd9-46cd02f60ed9>
+  PrefabRemaps:
+    []
+  Name: Text
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Text: Text
+  Editable: false
+  ShowEditingPreview: true
+  TouchHandler: !<reference> 00000000-0000-0000-0000-000000000000
+  SizeToFit: false
+  FontSize: 48
+  Font: !<reference> 00000000-0000-0000-0000-000000000000
+  LayoutRect:
+    left: -7.500000
+    bottom: -2.250000
+    right: 7.500000
+    top: 2.250000
+  OverflowVertical: Overflow
+  OverflowHorizontal: Overflow
+  Fill: !<TextFill>
+    Mode: Solid
+    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Texture: !<reference> 00000000-0000-0000-0000-000000000000
+    TileCount: 5.000000
+    TileZone: Rect
+    TextureStretch: FitWidth
+  Outline: !<OutlineSettings>
+    Enabled: false
+    Fill: !<TextFill>
+      Mode: Solid
+      Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
+      Texture: !<reference> 00000000-0000-0000-0000-000000000000
+      TileCount: 5.000000
+      TileZone: Rect
+      TextureStretch: FitWidth
+    Size: 0.250000
+  Dropshadow: !<DropshadowSettings>
+    Enabled: false
+    Fill: !<TextFill>
+      Mode: Solid
+      Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
+      Texture: !<reference> 00000000-0000-0000-0000-000000000000
+      TileCount: 5.000000
+      TileZone: Rect
+      TextureStretch: FitWidth
+    OffsetX: 0.250000
+    OffsetY: 0.250000
+  Background: !<BackgroundSettings>
+    Enabled: false
+    Fill: !<TextFill>
+      Mode: Solid
+      Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
+      Texture: !<reference> 00000000-0000-0000-0000-000000000000
+      TileCount: 5.000000
+      TileZone: Rect
+      TextureStretch: FitWidth
+    Margins:
+      left: 0.000000
+      bottom: 0.000000
+      right: 0.000000
+      top: 0.000000
+    CornerRadius: 0.000000
+  AdvancedLayout: !<TextAdvancedLayout>
+    ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+    LetterSpacing: 0.000000
+    LineSpacing: 1.000000
+    CapitalizationOverride: None
+  DepthTest: false
+  TwoSided: false
 - !<SceneObject/2ee60121-6093-4c93-8e10-70933bcf0600>
   PrefabRemaps:
     []
@@ -5693,7 +5787,6 @@
   ScriptAsset: !<reference> c9b819a1-3bbf-4b51-8ae6-78976393f5a9
   ScriptInputsDefault:
     useCommand: true
-    debug: true
     onListeningEnabledGlobalBehaviors: true
     onListeningDisabledGlobalBehaviors: true
     onErrorTriggeredGlobalBehaviors: true
@@ -5721,7 +5814,7 @@
       SYSTEM_VOICE_COMMANDText: true
       screenTextSYSTEM_VOICE_COMMANDResponses: !<reference.Text> 5864c1ed-1544-481e-ae9c-02aa95a8cb64
       editBehaviors: true
-      debug: false
+      debug: true
       onListeningEnabledGlobalBehaviors: !<reference.ScriptComponent[]>
         []
       onListeningDisabledGlobalBehaviors: !<reference.ScriptComponent[]>
@@ -6184,6 +6277,21 @@
   Components:
     - !<own> 192e4157-d8cd-4b9b-b5a9-73f4927c88b9
     - !<own> 336d050f-2757-4535-899a-d95362a889c0
+- !<SceneObject/4f973391-0f66-4c39-a203-aec6d3f3fd0b>
+  PrefabRemaps:
+    []
+  Name: Debug Text
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 2ec3b31f-3e77-4aee-9fd9-46cd02f60ed9
 - !<Text/5008a334-fa5e-4cb2-980d-7060935bdffe>
   PrefabRemaps:
     []
@@ -7155,6 +7263,25 @@
     - !<own> fe0eb749-0de0-4408-a7d9-17a51cda691f
   Components:
     []
+- !<ScriptComponent/5f13d122-64f8-4e4e-ba46-6d22db37887e>
+  PrefabRemaps:
+    []
+  Name: MicrophoneRecorder
+  Enabled: true
+  ScriptAsset: !<reference> 2dca9e50-2275-49e1-aced-6d8ec813e76b
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      microphoneAsset: !<reference.AudioTrackAsset> 585775f1-a525-438c-a605-cd494ef2927e
+      audioOutput: !<reference.AudioTrackAsset> 358f5dd6-a3a3-44cc-80b3-776d7616cd6b
+      outputTextComponent: !<reference.Text> c1a30024-77bc-4e61-971c-e900d3d7a375
+      debugText: !<reference.Text> 2ec3b31f-3e77-4aee-9fd9-46cd02f60ed9
+  ScriptTypes:
+    "":
+      {}
 - !<Text/5e6248d3-92cc-4f42-b1f2-72be179cac85>
   PrefabRemaps:
     []
@@ -13424,6 +13551,23 @@
     bottom: -16.000000
     right: 0.000000
     top: 16.000000
+- !<AudioComponent/ab520206-c281-408f-b41d-bcce1e810a09>
+  PrefabRemaps:
+    []
+  Name: Audio
+  Enabled: true
+  AudioTrack: !<reference> 585775f1-a525-438c-a605-cd494ef2927e
+  EnableAutoplayLoop: false
+  Volume: 1.000000
+  EnableMixToSnap: false
+  RecordVolume: 1.000000
+  EnableSpatialAudio: false
+  EnableDistanceEffect: false
+  CurveType: Logarithm
+  MinDistance: 0.000000
+  MaxDistance: 100.000000
+  EnableDirectivityEffect: false
+  EnablePositionEffect: false
 - !<ScriptComponent/ab689200-abb7-41ef-9870-e904dbef7a02>
   PrefabRemaps:
     []
@@ -15029,6 +15173,21 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<SceneObject/be400832-17e1-4571-8e72-7e654d145e92>
+  PrefabRemaps:
+    []
+  Name: MicrophoneRecorder
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 5f13d122-64f8-4e4e-ba46-6d22db37887e
 - !<SceneObject/be59fa3b-ffd2-44ed-992b-d6e16dc242d8>
   PrefabRemaps:
     []
@@ -15837,6 +15996,38 @@
   ScriptTypes:
     "":
       {}
+- !<AudioComponent/ca14e130-54e5-48a9-b0ba-02d53957ec4d>
+  PrefabRemaps:
+    []
+  Name: Audio
+  Enabled: true
+  AudioTrack: !<reference> 358f5dd6-a3a3-44cc-80b3-776d7616cd6b
+  EnableAutoplayLoop: false
+  Volume: 1.000000
+  EnableMixToSnap: false
+  RecordVolume: 1.000000
+  EnableSpatialAudio: false
+  EnableDistanceEffect: false
+  CurveType: Logarithm
+  MinDistance: 0.000000
+  MaxDistance: 100.000000
+  EnableDirectivityEffect: false
+  EnablePositionEffect: false
+- !<SceneObject/ca68bf14-9b48-4c19-a094-d25f42f90d78>
+  PrefabRemaps:
+    []
+  Name: Microphone Audio
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> ab520206-c281-408f-b41d-bcce1e810a09
 - !<ScriptComponent/cafd6048-b0aa-49b2-9195-1872ed66a237>
   PrefabRemaps:
     []
