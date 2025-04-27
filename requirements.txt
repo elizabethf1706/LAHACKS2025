@@ -1,2 +1,7 @@
 streamlit
+pymupdf
 groq
+PyMuPDF
+mammoth
+google-generativeai
+requests
