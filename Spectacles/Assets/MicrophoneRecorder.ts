@@ -290,7 +290,7 @@ export class MicrophoneRecorder extends BaseScriptComponent {
     const responseJson = await response.json();
 
     // todo: maybe some error handling here
-    this.fullText += responseJson.response;
+    this.fullText += responseJson.transcription;
     this.outputTextComponent.text = responseJson.response;
   }
   
@@ -301,12 +301,24 @@ export class MicrophoneRecorder extends BaseScriptComponent {
     this.recordMicrophoneAudio(true);
   }
 
-  private sendSummary() {
+  private async sendSummary() {
     if (!this.fullText) {
       return;
     }
+
+    const headers = {
+      "Content-Type": "application/json"
+    };
     
-    print("(todo: send summary with this.fullText)");
+    const request = new Request("https://la-hacks-2025-backend.onrender.com/api/save-conversation", {
+      method: "POST",
+      headers,
+      body: JSON.stringify({
+        transcription: this.fullText
+      }),
+    });
+
+    await remoteServiceModule.fetch(request);
   }
 
   private onToggle() {

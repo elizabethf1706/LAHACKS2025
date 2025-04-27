@@ -11,6 +11,8 @@ load_dotenv()
 
 app = Flask(__name__)
 
+transcriptions = []
+
 @app.post("/api/audio-response")
 def post_audio_response():
     data = request.data.decode()
@@ -68,6 +70,23 @@ def post_audio_response():
 
     return jsonify({
         "success": True,
+        "transcription": text,
         "response": response.choices[0].message.content
     })
 
+@app.post("/api/save-conversation")
+def save_conversation():
+    transcription = request.json["transcription"]
+
+    transcriptions.append(transcription)
+
+    return jsonify({
+        "success": True
+    })
+
+@app.get("/api/get-conversations")
+def get_conversations():
+    return jsonify({
+        "success": True,
+        "transcriptions": transcriptions
+    })
