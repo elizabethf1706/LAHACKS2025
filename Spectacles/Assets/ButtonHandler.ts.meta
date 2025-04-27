@@ -1,0 +1,48 @@
+- !<AssetImportMetadata/273fc824-ef3f-42ac-b7b3-66ec24f97157>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 18de0641-d5e7-4e92-8c8f-0e97d9b54d0a
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 18de0641-d5e7-4e92-8c8f-0e97d9b54d0a
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> b8c56d1a-6c25-4213-b4a7-55acf251e236
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/b8c56d1a-6c25-4213-b4a7-55acf251e236>
+  SvgIcon: ""
+  Description: ""
+  InternalVersion: 0
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: fb9e062c-b7f0-4c87-9a77-4d763b990a76
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    linkInfoTextObj: false
+    pfp1: false
+    pfp2: false
+    pfp3: false
+  ScriptTypesHidden:
+    {}
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  DefaultScriptInputs:
+    - pfp1: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      pfp2: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      pfp3: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      linkInfoTextObj: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input SceneObject pfp1
+    - // @input SceneObject pfp2
+    - // @input SceneObject pfp3
+    - // @input SceneObject linkInfoTextObj
