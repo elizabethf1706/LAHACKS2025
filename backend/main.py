@@ -302,3 +302,11 @@ def set_resume():
         return jsonify({"error": "No resume text provided"}), 400
     global_resume = resume_text
     return jsonify({"message": "Resume updated successfully."}), 200
+
+@app.get("/api/get_resume", methods=["GET"])
+def get_resume():
+    """
+    Endpoint to set the resume text globally.
+    Expects JSON: { "resume": "<resume text>" }
+    """
+    return jsonify({"resume": global_resume}), 200
