@@ -1,1 +1,3 @@
-# LAHACKS2025
+# UniTalk
+
+Make it easy to connect with anyone, anytime, anywhere.

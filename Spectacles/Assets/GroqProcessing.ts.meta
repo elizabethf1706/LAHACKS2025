@@ -1,0 +1,42 @@
+- !<AssetImportMetadata/ed5fc556-7266-4630-b864-2be473bfc8e1>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> c94e7226-ea40-460d-a397-15df26318822
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> c94e7226-ea40-460d-a397-15df26318822
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> c291252d-b677-4129-b4a4-eb7be88e49e6
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/c291252d-b677-4129-b4a4-eb7be88e49e6>
+  SvgIcon: ""
+  Description: ""
+  InternalVersion: 0
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: d261371f-9fe9-4f0a-8a91-b5a30526254f
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    outputTextComponent: false
+    transcriptionTextComponent: false
+  ScriptTypesHidden:
+    {}
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  DefaultScriptInputs:
+    - transcriptionTextComponent: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      outputTextComponent: !<reference.Text> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input Component.Text transcriptionTextComponent
+    - // @input Component.Text outputTextComponent

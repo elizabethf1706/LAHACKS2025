@@ -1,0 +1,82 @@
+- !<AssetImportMetadata/34f2528f-92bf-4895-8932-d3d60e0420fa>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> b4763a94-74e4-4ef2-b565-804d64b5a8fa
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> b4763a94-74e4-4ef2-b565-804d64b5a8fa
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    AssetLibraryId: 6jqVoaAXarMgC9sMHcWy1F
+  AssetDataMap:
+    ObjectPrefab: !<own> d6612c3f-4c04-4aff-abba-7c886ca8dc61
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ObjectPrefab/34958ab2-5afa-4884-97c6-e71e07aef585>
+  PackagePath: 3DLoadingIndicator__PLACE_IN_OBJECTS_PANEL
+  objects:
+    - !<own> 8f6c9633-ca7b-44a0-8253-97fa703dff06
+  LazyLoading: false
+  RetainAssets: true
+- !<ScriptComponent/7a4630d6-3036-4207-9b04-ba6b4de3b630>
+  PrefabRemaps:
+    []
+  Name: 3DLoadingIndicator
+  Enabled: true
+  ScriptAsset: !<reference> 006aacc0-3b9b-42b3-bbdf-90ccbb4ba5fd
+  ScriptInputsDefault:
+    startValue: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      loadingMesh: !<reference.MaterialMeshVisual> f2ecfa29-92ca-46ed-b1a3-01af351f3feb
+      startValue: !<float> 1.000000
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/8f6c9633-ca7b-44a0-8253-97fa703dff06>
+  PrefabRemaps:
+    []
+  Name: 3DLoadingIndicator
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: -100.000000}
+    rotation: {x: -90.000000, y: 0.000000, z: 180.000000}
+    scale: {x: 200.000000, y: 200.000000, z: 200.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> f2ecfa29-92ca-46ed-b1a3-01af351f3feb
+    - !<own> 7a4630d6-3036-4207-9b04-ba6b4de3b630
+- !<ObjectPrefabAssetData/d6612c3f-4c04-4aff-abba-7c886ca8dc61>
+  SourceRemaps:
+    - 5311bcb4-09fd-4334-a736-78261569c1d0: f2ecfa29-92ca-46ed-b1a3-01af351f3feb
+    - 6f7a30f0-61da-4c2e-b8ce-fcdf0a5b26da: 7a4630d6-3036-4207-9b04-ba6b4de3b630
+    - b4763a94-74e4-4ef2-b565-804d64b5a8fa: 34958ab2-5afa-4884-97c6-e71e07aef585
+    - e614c025-ae97-45dc-ac5e-0af08e35bed4: 8f6c9633-ca7b-44a0-8253-97fa703dff06
+  SourceState: !<own> 34958ab2-5afa-4884-97c6-e71e07aef585
+- !<RenderMeshVisual/f2ecfa29-92ca-46ed-b1a3-01af351f3feb>
+  PrefabRemaps:
+    []
+  Name: component_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> df4bb609-5cbf-4543-9f93-348f0632f8c3
+  Mesh: !<reference> f8dd0f96-40fb-4cad-8168-013b43f727cb
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
