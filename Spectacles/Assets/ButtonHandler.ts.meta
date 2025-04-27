@@ -45,4 +45,4 @@
     - // @input SceneObject pfp1
     - // @input SceneObject pfp2
     - // @input SceneObject pfp3
-    - // @input SceneObject linkInfoTextObj
+    - // @input Component.Text linkInfoTextObj

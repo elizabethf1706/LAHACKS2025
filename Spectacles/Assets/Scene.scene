@@ -4009,82 +4009,6 @@
   BlendNormals: false
   BlendShapes:
     {}
-- !<Text/2ec3b31f-3e77-4aee-9fd9-46cd02f60ed9>
-  PrefabRemaps:
-    []
-  Name: Text
-  Enabled: true
-  RenderOrder: 0
-  StretchMode: Stretch
-  VerticalAlignment: Center
-  HorizontalAlignment: Center
-  MeshShadowMode: None
-  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-  ShadowDensity: 1.000000
-  Text: Text
-  Editable: false
-  ShowEditingPreview: true
-  TouchHandler: !<reference> 00000000-0000-0000-0000-000000000000
-  SizeToFit: false
-  FontSize: 48
-  Font: !<reference> 00000000-0000-0000-0000-000000000000
-  LayoutRect:
-    left: -7.500000
-    bottom: -2.250000
-    right: 7.500000
-    top: 2.250000
-  OverflowVertical: Overflow
-  OverflowHorizontal: Overflow
-  Fill: !<TextFill>
-    Mode: Solid
-    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-    Texture: !<reference> 00000000-0000-0000-0000-000000000000
-    TileCount: 5.000000
-    TileZone: Rect
-    TextureStretch: FitWidth
-  Outline: !<OutlineSettings>
-    Enabled: false
-    Fill: !<TextFill>
-      Mode: Solid
-      Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
-      Texture: !<reference> 00000000-0000-0000-0000-000000000000
-      TileCount: 5.000000
-      TileZone: Rect
-      TextureStretch: FitWidth
-    Size: 0.250000
-  Dropshadow: !<DropshadowSettings>
-    Enabled: false
-    Fill: !<TextFill>
-      Mode: Solid
-      Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
-      Texture: !<reference> 00000000-0000-0000-0000-000000000000
-      TileCount: 5.000000
-      TileZone: Rect
-      TextureStretch: FitWidth
-    OffsetX: 0.250000
-    OffsetY: 0.250000
-  Background: !<BackgroundSettings>
-    Enabled: false
-    Fill: !<TextFill>
-      Mode: Solid
-      Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
-      Texture: !<reference> 00000000-0000-0000-0000-000000000000
-      TileCount: 5.000000
-      TileZone: Rect
-      TextureStretch: FitWidth
-    Margins:
-      left: 0.000000
-      bottom: 0.000000
-      right: 0.000000
-      top: 0.000000
-    CornerRadius: 0.000000
-  AdvancedLayout: !<TextAdvancedLayout>
-    ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
-    LetterSpacing: 0.000000
-    LineSpacing: 1.000000
-    CapitalizationOverride: None
-  DepthTest: false
-  TwoSided: false
 - !<SceneObject/2ee60121-6093-4c93-8e10-70933bcf0600>
   PrefabRemaps:
     []
@@ -4131,7 +4055,7 @@
       pfp1: !<reference.SceneObject> 59b67129-01db-4b3e-a4fa-958d0ca2c815
       pfp2: !<reference.SceneObject> 59599f07-3ece-4223-b1bd-6e2d52b7cd3d
       pfp3: !<reference.SceneObject> e97dd7e4-a1b8-438a-b4fb-04e76a961f90
-      linkInfoTextObj: !<reference.SceneObject> db5a23a4-9601-4499-8144-c67a3e52619a
+      linkInfoTextObj: !<reference.Text> 0745cefd-7056-4f28-bbeb-0b9a2355f9bc
   ScriptTypes:
     "":
       {}
@@ -6277,21 +6201,6 @@
   Components:
     - !<own> 192e4157-d8cd-4b9b-b5a9-73f4927c88b9
     - !<own> 336d050f-2757-4535-899a-d95362a889c0
-- !<SceneObject/4f973391-0f66-4c39-a203-aec6d3f3fd0b>
-  PrefabRemaps:
-    []
-  Name: Debug Text
-  Enabled: true
-  Layers: 1
-  LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> 2ec3b31f-3e77-4aee-9fd9-46cd02f60ed9
 - !<Text/5008a334-fa5e-4cb2-980d-7060935bdffe>
   PrefabRemaps:
     []
@@ -7263,25 +7172,6 @@
     - !<own> fe0eb749-0de0-4408-a7d9-17a51cda691f
   Components:
     []
-- !<ScriptComponent/5f13d122-64f8-4e4e-ba46-6d22db37887e>
-  PrefabRemaps:
-    []
-  Name: MicrophoneRecorder
-  Enabled: true
-  ScriptAsset: !<reference> 2dca9e50-2275-49e1-aced-6d8ec813e76b
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      microphoneAsset: !<reference.AudioTrackAsset> 585775f1-a525-438c-a605-cd494ef2927e
-      audioOutput: !<reference.AudioTrackAsset> 358f5dd6-a3a3-44cc-80b3-776d7616cd6b
-      outputTextComponent: !<reference.Text> c1a30024-77bc-4e61-971c-e900d3d7a375
-      debugText: !<reference.Text> 2ec3b31f-3e77-4aee-9fd9-46cd02f60ed9
-  ScriptTypes:
-    "":
-      {}
 - !<Text/5e6248d3-92cc-4f42-b1f2-72be179cac85>
   PrefabRemaps:
     []
@@ -7358,6 +7248,25 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
+- !<ScriptComponent/5f13d122-64f8-4e4e-ba46-6d22db37887e>
+  PrefabRemaps:
+    []
+  Name: MicrophoneRecorder
+  Enabled: true
+  ScriptAsset: !<reference> 2dca9e50-2275-49e1-aced-6d8ec813e76b
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      microphoneAsset: !<reference.AudioTrackAsset> 585775f1-a525-438c-a605-cd494ef2927e
+      audioOutput: !<reference.AudioTrackAsset> 358f5dd6-a3a3-44cc-80b3-776d7616cd6b
+      outputTextComponent: !<reference.Text> c1a30024-77bc-4e61-971c-e900d3d7a375
+      debugText: !<reference.Text> 2ec3b31f-3e77-4aee-9fd9-46cd02f60ed9
+  ScriptTypes:
+    "":
+      {}
 - !<ScriptComponent/5f5f3a34-580a-4ae1-9f0b-3854c0d53ccf>
   PrefabRemaps:
     []
@@ -15980,22 +15889,6 @@
   ScriptTypes:
     "":
       {}
-- !<ScriptComponent/cae74281-1027-4610-9bb2-591526620d3b>
-  PrefabRemaps:
-    []
-  Name: ScreenTransformAdapter
-  Enabled: true
-  ScriptAsset: !<reference> a10ae9cc-b063-47e4-b6d6-c02993b08a81
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      {}
-  ScriptTypes:
-    "":
-      {}
 - !<AudioComponent/ca14e130-54e5-48a9-b0ba-02d53957ec4d>
   PrefabRemaps:
     []
@@ -16028,6 +15921,22 @@
     []
   Components:
     - !<own> ab520206-c281-408f-b41d-bcce1e810a09
+- !<ScriptComponent/cae74281-1027-4610-9bb2-591526620d3b>
+  PrefabRemaps:
+    []
+  Name: ScreenTransformAdapter
+  Enabled: true
+  ScriptAsset: !<reference> a10ae9cc-b063-47e4-b6d6-c02993b08a81
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<ScriptComponent/cafd6048-b0aa-49b2-9195-1872ed66a237>
   PrefabRemaps:
     []
@@ -16725,8 +16634,8 @@
   Enabled: true
   Layers: 1048576
   LocalTransform:
-    position: {x: -3.464479, y: -9.816332, z: -63.765785}
-    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     hasSegmentScaleCompensation: false
   Children:
