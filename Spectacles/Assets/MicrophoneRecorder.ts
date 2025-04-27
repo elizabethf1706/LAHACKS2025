@@ -318,7 +318,7 @@ export class MicrophoneRecorder extends BaseScriptComponent {
 
     // todo: maybe some error handling here
     this.fullText += responseJson.transcription;
-    this.outputTextComponent.text = JSON.parse(chatResponseJson.assistant).join("\n");
+    this.outputTextComponent.text = JSON.parse(chatResponseJson.assistant).join("\n") + "\n\n" + this.fullText.slice(Math.max(0, this.fullText.length - 100));
   }
   
   private stopRecordingDueToSilence() {
