@@ -5573,6 +5573,7 @@
     - !<own> fe0eb749-0de0-4408-a7d9-17a51cda691f
   Components:
     []
+- !<ScriptComponent/5f13d122-64f8-4e4e-ba46-6d22db37887e> ~
 - !<ScriptComponent/5f5f3a34-580a-4ae1-9f0b-3854c0d53ccf>
   PrefabRemaps:
     []
