@@ -37,7 +37,7 @@ export class MicrophoneRecorder extends BaseScriptComponent {
   private currentPlaybackTime: number = 0;
 
   private silenceTimer: number = 0;
-  private readonly SILENCE_THRESHOLD = 0.03; // adjust based on testing
+  private readonly SILENCE_THRESHOLD = 0.02; // adjust based on testing
   private readonly MAX_SILENCE_DURATION = 0.5; // seconds
 
   private justStarted: boolean = true;

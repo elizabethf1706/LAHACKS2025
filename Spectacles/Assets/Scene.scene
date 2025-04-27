@@ -736,7 +736,7 @@
   MeshShadowMode: None
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
-  Text: testttt
+  Text: ""
   Editable: true
   ShowEditingPreview: true
   TouchHandler: !<reference> 00000000-0000-0000-0000-000000000000
@@ -4260,9 +4260,9 @@
   RawMode: true
   ForceBasic: true
   Anchor:
-    left: -0.988383
-    bottom: 0.243734
-    right: -0.125152
+    left: -0.893324
+    bottom: 0.219301
+    right: -0.038204
     top: 0.960924
   Offset:
     left: 0.000000
@@ -15518,7 +15518,7 @@
   PrefabRemaps:
     []
   Name: Loading
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: 12.296850, y: 17.555817, z: -0.255623}
